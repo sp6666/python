@@ -1,4 +1,5 @@
 @echo off
-
-start python excel_read.py
+D:
+cd D:\spp_code\python
+python excel_read.py
 pause

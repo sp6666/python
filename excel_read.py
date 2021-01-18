@@ -12,17 +12,17 @@ def read_sheet(sheet):
     titles = []
     for title in rows_data[0]:
         titles.append(title.value)
-    print(titles)
+    # print(titles)
     # 获取表单的类型信息
     types = []
     for title in rows_data[2]:
         types.append(title.value)
-    print(types)
+    # print(types)
     # 获取表单的前后端信息
     clientOrServers = []
     for title in rows_data[3]:
         clientOrServers.append(title.value)
-    print(clientOrServers)
+    # print(clientOrServers)
 
     end_str = "\"" + sheet.title + "\"" + ":{"
 
@@ -43,7 +43,7 @@ def read_sheet(sheet):
     if end_str.endswith(','):
         end_str = end_str[:-1]
     end_str += "}"
-    print(end_str)
+    # print(end_str)
     return end_str
 
 
@@ -53,7 +53,7 @@ def read_excel(path, excelName):
     # 打开文件
     wb = openpyxl.load_workbook(excelPath)
     # 获取所有sheet的名字
-    print(wb.sheetnames)
+    # print(wb.sheetnames)
 
     names = excelName.split('.')
     js_str = '\"' + names[0] + '\":{'
@@ -64,7 +64,7 @@ def read_excel(path, excelName):
     if js_str.endswith(','):
         js_str = js_str[:-1]
     js_str += '}'
-    print(js_str)
+    # print(js_str)
     return js_str
 
 
@@ -82,14 +82,14 @@ def readAllExcel():
     if json.endswith(','):
         json = json[:-1]
     json += '}'
-    print('json=', json)
+    # print('json=', json)
     return json
 
 
 # 更新json文件
 def reWriteJson(json):
     filename = os.path.abspath('.') + '/test.json'
-    print(filename)
+    # print(filename)
     fd = open(filename, 'w')
     fd.write(json)
     fd.close()
