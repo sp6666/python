@@ -1,5 +1,4 @@
 @echo off
-D:
-cd D:\spp_code\python
+cd /d %~dp0 %当前路径%
 python excel_read.py
 pause
