@@ -88,7 +88,7 @@ def readAllExcel():
 
 # 更新json文件
 def reWriteJson(json):
-    filename = os.path.abspath('.') + '/test.json'
+    filename = os.path.abspath('.') + '/gameData.json'
     # print(filename)
     fd = open(filename, 'w')
     fd.write(json)
